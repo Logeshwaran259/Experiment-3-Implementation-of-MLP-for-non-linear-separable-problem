@@ -1,48 +1,232 @@
-# Experiment-3-Implementation-of-MLP-for-non-linear-separable-problem
-**AIM:**
+# Experiment-4---Implementation-of-MLP-with-Backpropagation
 
-To implement a perceptron for classification using Python
+## AIM:
+To implement a Multilayer Perceptron for Multi classification
 
-**EQUIPMENTS REQUIRED:**
+## EQUIPMENTS REQUIRED:
 Hardware – PCs
 Anaconda – Python 3.7 Installation / Google Colab /Jupiter Notebook
 
-**RELATED THEORETICAL CONCEPT:**
-Exclusive or is a logical operation that outputs true when the inputs differ.For the XOR gate, the TRUTH table will be as follows
-XOR truth table
-![Img1](https://user-images.githubusercontent.com/112920679/195774720-35c2ed9d-d484-4485-b608-d809931a28f5.gif)
+## RELATED THEORETICAL CONCEPT:
 
-XOR is a classification problem, as it renders binary distinct outputs. If we plot the INPUTS vs OUTPUTS for the XOR gate, as shown in figure below
+A multilayer perceptron (MLP) is a feedforward artificial neural network that generates a set of outputs from a set of inputs. An MLP is characterized by several layers of input nodes connected as a directed graph between the input and output layers. MLP uses back propagation for training the network. MLP is a deep learning method.
+A multilayer perceptron is a neural network connecting multiple layers in a directed graph, which means that the signal path through the nodes only goes one way. Each node, apart from the input nodes, has a nonlinear activation function. An MLP uses backpropagation as a supervised learning technique.
+MLP is widely used for solving problems that require supervised learning as well as research into computational neuroscience and parallel distributed processing. Applications include speech recognition, image recognition and machine translation.
+ 
+MLP has the following features:
 
-![Img2](https://user-images.githubusercontent.com/112920679/195774898-b0c5886b-3d58-4377-b52f-73148a3fe54d.gif)
+Ø  Adjusts the synaptic weights based on Error Correction Rule
 
-The graph plots the two inputs corresponding to their output. Visualizing this plot, we can see that it is impossible to separate the different outputs (1 and 0) using a linear equation.To separate the two outputs using linear equation(s), it is required to draw two separate lines as shown in figure below:
-![Img 3](https://user-images.githubusercontent.com/112920679/195775012-74683270-561b-4a3a-ac62-cf5ddfcf49ca.gif)
-For a problem resembling the outputs of XOR, it was impossible for the machine to set up an equation for good outputs. This is what led to the birth of the concept of hidden layers which are extensively used in Artificial Neural Networks. The solution to the XOR problem lies in multidimensional analysis. We plug in numerous inputs in various layers of interpretation and processing, to generate the optimum outputs.
-The inner layers for deeper processing of the inputs are known as hidden layers. The hidden layers are not dependent on any other layers. This architecture is known as Multilayer Perceptron (MLP).
-![Img 4](https://user-images.githubusercontent.com/112920679/195775183-1f64fe3d-a60e-4998-b4f5-abce9534689d.gif)
-The number of layers in MLP is not fixed and thus can have any number of hidden layers for processing. In the case of MLP, the weights are defined for each hidden layer, which transfers the signal to the next proceeding layer.Using the MLP approach lets us dive into more than two dimensions, which in turn lets us separate the outputs of XOR using multidimensional equations.Each hidden unit invokes an activation function, to range down their output values to 0 or The MLP approach also lies in the class of feed-forward Artificial Neural Network, and thus can only communicate in one direction. MLP solves the XOR problem efficiently by visualizing the data points in multi-dimensions and thus constructing an n-variable equation to fit in the output values using back propagation algorithm
+Ø  Adopts LMS
 
-**Algorithm :**
+Ø  possess Backpropagation algorithm for recurrent propagation of error
 
-Step 1 : Initialize the input patterns for XOR Gate
-Step 2: Initialize the desired output of the XOR Gate
-Step 3: Initialize the weights for the 2 layer MLP with 2 Hidden neuron 
-              and 1 output neuron
-Step 3: Repeat the  iteration  until the losses become constant and 
-              minimum
-              (i)  Compute the output using forward pass output
-              (ii) Compute the error  
-		          (iii) Compute the change in weight ‘dw’ by using backward 
-                     propagation algorithm.
-             (iv) Modify the weight as per delta rule.
-             (v)   Append the losses in a list
-Step 4 : Test for the XOR patterns.
+Ø  Consists of two passes
 
-** PROGRAM** 
-/Type your Program here/
+  	(i)Feed Forward pass
+	         (ii)Backward pass
+           
+Ø  Learning process –backpropagation
+
+Ø  Computationally efficient method
+
+![image 10](https://user-images.githubusercontent.com/112920679/198804559-5b28cbc4-d8f4-4074-804b-2ebc82d9eb4a.jpg)
+
+3 Distinctive Characteristics of MLP:
+
+Ø  Each neuron in network includes a non-linear activation function
+
+![image](https://user-images.githubusercontent.com/112920679/198814300-0e5fccdf-d3ea-4fa0-b053-98ca3a7b0800.png)
+
+Ø  Contains one or more hidden layers with hidden neurons
+
+Ø  Network exhibits high degree of connectivity determined by the synapses of the network
+
+3 Signals involved in MLP are:
+
+ Functional Signal
+
+*input signal
+
+*propagates forward neuron by neuron thro network and emerges at an output signal
+
+*F(x,w) at each neuron as it passes
+
+Error Signal
+
+   *Originates at an output neuron
+   
+   *Propagates backward through the network neuron
+   
+   *Involves error dependent function in one way or the other
+   
+Each hidden neuron or output neuron of MLP is designed to perform two computations:
+
+The computation of the function signal appearing at the output of a neuron which is expressed as a continuous non-linear function of the input signal and synaptic weights associated with that neuron
+
+The computation of an estimate of the gradient vector is needed for the backward pass through the network
+
+TWO PASSES OF COMPUTATION:
+
+In the forward pass:
+
+•       Synaptic weights remain unaltered
+
+•       Function signal are computed neuron by neuron
+
+•       Function signal of jth neuron is
+            ![image](https://user-images.githubusercontent.com/112920679/198814313-2426b3a2-5b8f-489e-af0a-674cc85bd89d.png)
+            ![image](https://user-images.githubusercontent.com/112920679/198814328-1a69a3cd-7e02-4829-b773-8338ac8dcd35.png)
+            ![image](https://user-images.githubusercontent.com/112920679/198814339-9c9e5c30-ac2d-4f50-910c-9732f83cabe4.png)
 
 
- **OUTPUT** 
 
-** RESULT**
+If jth neuron is output neuron, the m=mL  and output of j th neuron is
+               ![image](https://user-images.githubusercontent.com/112920679/198814349-a6aee083-d476-41c4-b662-8968b5fc9880.png)
+
+Forward phase begins with in the first hidden layer and end by computing ej(n) in the output layer
+![image](https://user-images.githubusercontent.com/112920679/198814353-276eadb5-116e-4941-b04e-e96befae02ed.png)
+
+
+In the backward pass,
+
+•       It starts from the output layer by passing error signal towards leftward layer neurons to compute local gradient recursively in each neuron
+
+•        it changes the synaptic weight by delta rule
+
+![image](https://user-images.githubusercontent.com/112920679/198814362-05a251fd-fceb-43cd-867b-75e6339d870a.png)
+
+
+
+## ALGORITHM:
+
+1.Import the necessary libraries of python.
+
+2. After that, create a list of attribute names in the dataset and use it in a call to the read_csv() function of the pandas library along with the name of the CSV file containing the dataset.
+
+3. Divide the dataset into two parts. While the first part contains the first four columns that we assign in the variable x. Likewise, the second part contains only the last column that is the class label. Further, assign it to the variable y.
+
+4. Call the train_test_split() function that further divides the dataset into training data and testing data with a testing data size of 20%.
+Normalize our dataset. 
+
+5.In order to do that we call the StandardScaler() function. Basically, the StandardScaler() function subtracts the mean from a feature and scales it to the unit variance.
+
+6.Invoke the MLPClassifier() function with appropriate parameters indicating the hidden layer sizes, activation function, and the maximum number of iterations.
+
+7.In order to get the predicted values we call the predict() function on the testing data set.
+
+8. Finally, call the functions confusion_matrix(), and the classification_report() in order to evaluate the performance of our classifier.
+
+## PROGRAM 
+```
+Name : Ranjith G.
+Register Number : 212220220034
+```
+### Importing Libraries
+```
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder,StandardScaler
+from sklearn.neural_network import MLPClassifier
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+```
+### Reading Dataset
+```
+df = pd.read_csv("./IRIS.csv")
+df
+```
+### Assiging X and Y values
+```
+# Takes first 4 columns and assign them to variable "X"
+# X = df.iloc[:,:4]
+X = df[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]
+
+# Takes first 5th columns and assign them to variable "Y".
+# y = df.select_dtypes(include=[object])  
+y = df['species']
+```
+### First five values of X and Y
+```
+X.head()
+
+y.head()
+```
+### Unique values in Y
+```
+print(y.unique())
+```
+### Transforming Categorical into numerical values for Y
+```
+le = LabelEncoder()
+y = le.fit_transform(y)
+
+y
+```
+### Splitting Dataset for Training and Testing
+```
+# 80% - training data and 20% - test data)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20)
+```
+### Normalizing X values
+```
+# Feature scaling
+scaler = StandardScaler()  
+scaler.fit(X_train)
+
+X_train = scaler.transform(X_train)  
+X_test = scaler.transform(X_test)
+```
+### Creating MLP and classifing
+```
+mlp = MLPClassifier(hidden_layer_sizes=(10, 10, 10), max_iter=1000)  
+mlp.fit(X_train, y_train)  
+predictions = mlp.predict(X_test) 
+```
+### Predictions
+```
+print(predictions)
+```
+### Accuracy
+```
+accuracy_score(y_test,predictions)
+```
+### Confusion Matrix
+```
+print(confusion_matrix(y_test,predictions))
+```
+### Classification Report
+```
+print(classification_report(y_test,predictions))
+```
+
+## OUTPUT 
+### Reading Dataset
+![image](https://user-images.githubusercontent.com/93427345/201069649-a7751ade-0159-455a-98a0-10640dfae564.png)
+
+### First five values of X
+![image](https://user-images.githubusercontent.com/93427345/201069760-226f6840-e634-4cd9-9509-e7c041a35e99.png)
+
+### First five values of Y
+![image](https://user-images.githubusercontent.com/93427345/201069843-e25b08e6-e65d-4c0b-881a-0a73502b03b1.png)
+
+### Unique values in Y
+![image](https://user-images.githubusercontent.com/93427345/201069946-33961ef0-a220-4fb1-911a-99326a936c60.png)
+
+### Transforming Categorical into numerical values for Y
+![image](https://user-images.githubusercontent.com/93427345/201070041-c8282230-d7ec-477f-a877-56db571a4f1e.png)
+
+### Predictions
+![image](https://user-images.githubusercontent.com/93427345/201070255-c65cc48f-c987-4f5c-9c37-50180748415b.png)
+
+### Accuracy
+![image](https://user-images.githubusercontent.com/93427345/201070331-66c79cf8-d497-4372-91da-7c82d82edcbc.png)
+
+### Confusion Matrix
+![image](https://user-images.githubusercontent.com/93427345/201070423-5f012b79-c991-4904-b607-849ef4d5e079.png)
+
+### Classification Report
+![image](https://user-images.githubusercontent.com/93427345/201070512-f5d51618-d242-4dae-8df7-d5439be19497.png)
+
+
+## RESULT
+Thus a Multilayer Perceptron with Backpropagation is implemented for Multi classification
